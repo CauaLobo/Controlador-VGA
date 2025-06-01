@@ -1,4 +1,4 @@
-# Projeto: Controlador VGA em Verilog
+# Projeto: Controlador VGA 
 
 Este repositório contém um projeto em Verilog desenvolvido no ambiente Quartus II, com foco na implementação de um controlador VGA utilizando a placa DE10-Lite. O objetivo é gerar sinais compatíveis com um monitor VGA, permitindo exibir informações gráficas na tela com base nas entradas configuradas. O projeto aborda conceitos de temporização de sinais VGA, controle de cor e geração de sincronismo horizontal e vertical.
 
