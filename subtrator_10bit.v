@@ -1,0 +1,41 @@
+module subtrator_10bit (
+    input [9:0] A,
+    input [9:0] B,
+    output [9:0] diff,
+    output borrow
+);
+    wire [9:0] not_B;
+    wire [10:0] temp_sum;
+    
+    // Inverter B
+    not not0 (not_B[0], B[0]);
+    not not1 (not_B[1], B[1]);
+    not not2 (not_B[2], B[2]);
+    not not3 (not_B[3], B[3]);
+    not not4 (not_B[4], B[4]);
+    not not5 (not_B[5], B[5]);
+    not not6 (not_B[6], B[6]);
+    not not7 (not_B[7], B[7]);
+    not not8 (not_B[8], B[8]);
+    not not9 (not_B[9], B[9]);
+    
+    // Somador (A + ~B + 1)
+    assign temp_sum = A + not_B + 1;
+    assign diff = temp_sum[9:0];
+    assign borrow = ~temp_sum[10];
+endmodule
+
+module comparador_menor_96 (
+    input [9:0] hCount,
+    output hsync
+);
+    wire [9:0] diff;
+    wire borrow;
+    
+    subtrator_10bit sub (
+        .A(hCount),
+        .B(10'd96),
+        .diff(diff),
+        .borrow(hsync)
+    );
+endmodule

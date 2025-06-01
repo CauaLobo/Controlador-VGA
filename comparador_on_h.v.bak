@@ -1,0 +1,37 @@
+// Módulo comparador_on_h: Determina se um píxel está na região ativa de uma tela
+// com base nas coordenadas hCount (horizontal) e vCount (vertical).
+module comparador_on_h (
+    input  [9:0] hCount,    // Contador horizontal (coordenada x do píxel)
+    input  [9:0] vCount,    // Contador vertical (coordenada y do píxel)
+    output       on_h       // Saída: 1 se o píxel está na região ativa, 0 caso contrário
+);
+
+    // Declaração de fios internos
+    wire ge_144;            // Sinal: hCount >= 144
+    wire lt_784;            // Sinal: vCount < 784
+    wire [9:0] diff_h;      // Resultado da subtração para hCount (não usado diretamente)
+    wire [9:0] diff_v;      // Resultado da subtração para vCount (não usado diretamente)
+    wire borrow_h;          // Sinal de borrow da subtração de hCount
+    wire borrow_v;          // Sinal de borrow da subtração de vCount
+
+    // Comparação: hCount >= 144 (equivalente a !(hCount < 144))
+    subtrator_10bit sub_h (
+        .A(hCount),         // Entrada: contador horizontal
+        .B(10'd144),        // Constante: 144
+        .diff(diff_h),      // Saída: resultado da subtração (hCount - 144)
+        .borrow(borrow_h)   // Saída: sinal de borrow
+    );
+    not (ge_144, borrow_h); // Inverte borrow_h para obter hCount >= 144
+
+    // Comparação: vCount < 784
+    subtrator_10bit sub_v (
+        .A(vCount),         // Entrada: contador vertical
+        .B(10'd784),        // Constante: 784
+        .diff(diff_v),      // Saída: resultado da subtração (vCount - 784)
+        .borrow(lt_784)     // Saída: sinal de borrow (1 se vCount < 784)
+    );
+
+    // Saída: on_h = 1 se hCount >= 144 e vCount < 784
+    and (on_h, ge_144, lt_784);
+
+endmodule

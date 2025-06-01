@@ -1,0 +1,730 @@
+|main_vga
+clk_50 => clk_50.IN1
+rst_o => rst.IN1
+sw0 => sw0.IN1
+sw1 => sw1.IN1
+sw2 => sw2.IN1
+sw3 => sw3.IN1
+sw4 => ~NO_FANOUT~
+sw5 => ~NO_FANOUT~
+sw6 => ~NO_FANOUT~
+sw7 => ~NO_FANOUT~
+sw8 => ~NO_FANOUT~
+sw9 => ~NO_FANOUT~
+hsync << comparador_menor_96:comp_hsync.hsync
+vsync << comparador_menor_2:comp_vsync.vsync
+R[0] << comb.DB_MAX_OUTPUT_PORT_TYPE
+R[1] << comb.DB_MAX_OUTPUT_PORT_TYPE
+R[2] << comb.DB_MAX_OUTPUT_PORT_TYPE
+R[3] << comb.DB_MAX_OUTPUT_PORT_TYPE
+G[0] << comb.DB_MAX_OUTPUT_PORT_TYPE
+G[1] << comb.DB_MAX_OUTPUT_PORT_TYPE
+G[2] << comb.DB_MAX_OUTPUT_PORT_TYPE
+G[3] << comb.DB_MAX_OUTPUT_PORT_TYPE
+B[0] << comb.DB_MAX_OUTPUT_PORT_TYPE
+B[1] << comb.DB_MAX_OUTPUT_PORT_TYPE
+B[2] << comb.DB_MAX_OUTPUT_PORT_TYPE
+B[3] << comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|divisor_clock2:div
+clk => clk_out~reg0.CLK
+reset => clk_out~reg0.ACLR
+clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|comparador_igual_799:comp_h
+hCount[0] => WideAnd0.IN0
+hCount[1] => WideAnd0.IN1
+hCount[2] => WideAnd0.IN2
+hCount[3] => WideAnd0.IN3
+hCount[4] => WideAnd0.IN4
+hCount[5] => WideAnd0.IN5
+hCount[6] => WideAnd0.IN6
+hCount[7] => WideAnd0.IN7
+hCount[8] => WideAnd0.IN8
+hCount[9] => WideAnd0.IN9
+fim_h <= WideAnd0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|comparador_igual_524:comp_v
+vCount[0] => WideAnd0.IN0
+vCount[1] => WideAnd0.IN1
+vCount[2] => WideAnd0.IN2
+vCount[3] => WideAnd0.IN3
+vCount[4] => WideAnd0.IN4
+vCount[5] => WideAnd0.IN5
+vCount[6] => WideAnd0.IN6
+vCount[7] => WideAnd0.IN7
+vCount[8] => WideAnd0.IN8
+vCount[9] => WideAnd0.IN9
+fim_v <= WideAnd0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|contador_JK:cont_h
+clk => clk.IN10
+rst => rst.IN10
+enable => enable.IN10
+Q[0] <= Q[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= jk_ff_flipflop:contador[1].ff.Q
+Q[2] <= jk_ff_flipflop:contador[2].ff.Q
+Q[3] <= jk_ff_flipflop:contador[3].ff.Q
+Q[4] <= jk_ff_flipflop:contador[4].ff.Q
+Q[5] <= jk_ff_flipflop:contador[5].ff.Q
+Q[6] <= jk_ff_flipflop:contador[6].ff.Q
+Q[7] <= jk_ff_flipflop:contador[7].ff.Q
+Q[8] <= jk_ff_flipflop:contador[8].ff.Q
+Q[9] <= jk_ff_flipflop:contador[9].ff.Q
+
+
+|main_vga|contador_JK:cont_h|jk_ff_flipflop:ff0
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+J => Mux0.IN3
+K => Mux0.IN4
+enable => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|contador_JK:cont_h|jk_ff_flipflop:contador[1].ff
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+J => Mux0.IN3
+K => Mux0.IN4
+enable => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|contador_JK:cont_h|jk_ff_flipflop:contador[2].ff
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+J => Mux0.IN3
+K => Mux0.IN4
+enable => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|contador_JK:cont_h|jk_ff_flipflop:contador[3].ff
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+J => Mux0.IN3
+K => Mux0.IN4
+enable => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|contador_JK:cont_h|jk_ff_flipflop:contador[4].ff
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+J => Mux0.IN3
+K => Mux0.IN4
+enable => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|contador_JK:cont_h|jk_ff_flipflop:contador[5].ff
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+J => Mux0.IN3
+K => Mux0.IN4
+enable => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|contador_JK:cont_h|jk_ff_flipflop:contador[6].ff
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+J => Mux0.IN3
+K => Mux0.IN4
+enable => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|contador_JK:cont_h|jk_ff_flipflop:contador[7].ff
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+J => Mux0.IN3
+K => Mux0.IN4
+enable => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|contador_JK:cont_h|jk_ff_flipflop:contador[8].ff
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+J => Mux0.IN3
+K => Mux0.IN4
+enable => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|contador_JK:cont_h|jk_ff_flipflop:contador[9].ff
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+J => Mux0.IN3
+K => Mux0.IN4
+enable => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|contador_JK:cont_v
+clk => clk.IN10
+rst => rst.IN10
+enable => enable.IN10
+Q[0] <= Q[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= jk_ff_flipflop:contador[1].ff.Q
+Q[2] <= jk_ff_flipflop:contador[2].ff.Q
+Q[3] <= jk_ff_flipflop:contador[3].ff.Q
+Q[4] <= jk_ff_flipflop:contador[4].ff.Q
+Q[5] <= jk_ff_flipflop:contador[5].ff.Q
+Q[6] <= jk_ff_flipflop:contador[6].ff.Q
+Q[7] <= jk_ff_flipflop:contador[7].ff.Q
+Q[8] <= jk_ff_flipflop:contador[8].ff.Q
+Q[9] <= jk_ff_flipflop:contador[9].ff.Q
+
+
+|main_vga|contador_JK:cont_v|jk_ff_flipflop:ff0
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+J => Mux0.IN3
+K => Mux0.IN4
+enable => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|contador_JK:cont_v|jk_ff_flipflop:contador[1].ff
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+J => Mux0.IN3
+K => Mux0.IN4
+enable => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|contador_JK:cont_v|jk_ff_flipflop:contador[2].ff
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+J => Mux0.IN3
+K => Mux0.IN4
+enable => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|contador_JK:cont_v|jk_ff_flipflop:contador[3].ff
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+J => Mux0.IN3
+K => Mux0.IN4
+enable => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|contador_JK:cont_v|jk_ff_flipflop:contador[4].ff
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+J => Mux0.IN3
+K => Mux0.IN4
+enable => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|contador_JK:cont_v|jk_ff_flipflop:contador[5].ff
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+J => Mux0.IN3
+K => Mux0.IN4
+enable => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|contador_JK:cont_v|jk_ff_flipflop:contador[6].ff
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+J => Mux0.IN3
+K => Mux0.IN4
+enable => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|contador_JK:cont_v|jk_ff_flipflop:contador[7].ff
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+J => Mux0.IN3
+K => Mux0.IN4
+enable => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|contador_JK:cont_v|jk_ff_flipflop:contador[8].ff
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+J => Mux0.IN3
+K => Mux0.IN4
+enable => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|contador_JK:cont_v|jk_ff_flipflop:contador[9].ff
+clk => Q~reg0.CLK
+rst => Q.OUTPUTSELECT
+J => Mux0.IN3
+K => Mux0.IN4
+enable => Q.OUTPUTSELECT
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|comparador_menor_96:comp_hsync
+hCount[0] => hCount[0].IN1
+hCount[1] => hCount[1].IN1
+hCount[2] => hCount[2].IN1
+hCount[3] => hCount[3].IN1
+hCount[4] => hCount[4].IN1
+hCount[5] => hCount[5].IN1
+hCount[6] => hCount[6].IN1
+hCount[7] => hCount[7].IN1
+hCount[8] => hCount[8].IN1
+hCount[9] => hCount[9].IN1
+hsync <= subtrator_10bit:sub.borrow
+
+
+|main_vga|comparador_menor_96:comp_hsync|subtrator_10bit:sub
+A[0] => Add0.IN10
+A[1] => Add0.IN9
+A[2] => Add0.IN8
+A[3] => Add0.IN7
+A[4] => Add0.IN6
+A[5] => Add0.IN5
+A[6] => Add0.IN4
+A[7] => Add0.IN3
+A[8] => Add0.IN2
+A[9] => Add0.IN1
+B[0] => Add0.IN20
+B[1] => Add0.IN19
+B[2] => Add0.IN18
+B[3] => Add0.IN17
+B[4] => Add0.IN16
+B[5] => Add0.IN15
+B[6] => Add0.IN14
+B[7] => Add0.IN13
+B[8] => Add0.IN12
+B[9] => Add0.IN11
+diff[0] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[4] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[5] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[6] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[7] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[8] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[9] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+borrow <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|comparador_menor_2:comp_vsync
+vCount[0] => vCount[0].IN1
+vCount[1] => vCount[1].IN1
+vCount[2] => vCount[2].IN1
+vCount[3] => vCount[3].IN1
+vCount[4] => vCount[4].IN1
+vCount[5] => vCount[5].IN1
+vCount[6] => vCount[6].IN1
+vCount[7] => vCount[7].IN1
+vCount[8] => vCount[8].IN1
+vCount[9] => vCount[9].IN1
+vsync <= subtrator_10bit:sub.borrow
+
+
+|main_vga|comparador_menor_2:comp_vsync|subtrator_10bit:sub
+A[0] => Add0.IN10
+A[1] => Add0.IN9
+A[2] => Add0.IN8
+A[3] => Add0.IN7
+A[4] => Add0.IN6
+A[5] => Add0.IN5
+A[6] => Add0.IN4
+A[7] => Add0.IN3
+A[8] => Add0.IN2
+A[9] => Add0.IN1
+B[0] => Add0.IN20
+B[1] => Add0.IN19
+B[2] => Add0.IN18
+B[3] => Add0.IN17
+B[4] => Add0.IN16
+B[5] => Add0.IN15
+B[6] => Add0.IN14
+B[7] => Add0.IN13
+B[8] => Add0.IN12
+B[9] => Add0.IN11
+diff[0] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[4] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[5] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[6] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[7] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[8] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[9] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+borrow <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|comparador_on_h:comp_on_h
+hCount[0] => hCount[0].IN1
+hCount[1] => hCount[1].IN1
+hCount[2] => hCount[2].IN1
+hCount[3] => hCount[3].IN1
+hCount[4] => hCount[4].IN1
+hCount[5] => hCount[5].IN1
+hCount[6] => hCount[6].IN1
+hCount[7] => hCount[7].IN1
+hCount[8] => hCount[8].IN1
+hCount[9] => hCount[9].IN1
+vCount[0] => vCount[0].IN1
+vCount[1] => vCount[1].IN1
+vCount[2] => vCount[2].IN1
+vCount[3] => vCount[3].IN1
+vCount[4] => vCount[4].IN1
+vCount[5] => vCount[5].IN1
+vCount[6] => vCount[6].IN1
+vCount[7] => vCount[7].IN1
+vCount[8] => vCount[8].IN1
+vCount[9] => vCount[9].IN1
+on_h <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|comparador_on_h:comp_on_h|subtrator_10bit:sub_h
+A[0] => Add0.IN10
+A[1] => Add0.IN9
+A[2] => Add0.IN8
+A[3] => Add0.IN7
+A[4] => Add0.IN6
+A[5] => Add0.IN5
+A[6] => Add0.IN4
+A[7] => Add0.IN3
+A[8] => Add0.IN2
+A[9] => Add0.IN1
+B[0] => Add0.IN20
+B[1] => Add0.IN19
+B[2] => Add0.IN18
+B[3] => Add0.IN17
+B[4] => Add0.IN16
+B[5] => Add0.IN15
+B[6] => Add0.IN14
+B[7] => Add0.IN13
+B[8] => Add0.IN12
+B[9] => Add0.IN11
+diff[0] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[4] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[5] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[6] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[7] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[8] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[9] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+borrow <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|comparador_on_h:comp_on_h|subtrator_10bit:sub_v
+A[0] => Add0.IN10
+A[1] => Add0.IN9
+A[2] => Add0.IN8
+A[3] => Add0.IN7
+A[4] => Add0.IN6
+A[5] => Add0.IN5
+A[6] => Add0.IN4
+A[7] => Add0.IN3
+A[8] => Add0.IN2
+A[9] => Add0.IN1
+B[0] => Add0.IN20
+B[1] => Add0.IN19
+B[2] => Add0.IN18
+B[3] => Add0.IN17
+B[4] => Add0.IN16
+B[5] => Add0.IN15
+B[6] => Add0.IN14
+B[7] => Add0.IN13
+B[8] => Add0.IN12
+B[9] => Add0.IN11
+diff[0] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[4] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[5] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[6] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[7] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[8] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[9] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+borrow <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|comparador_on_v:comp_on_v
+hCount[0] => hCount[0].IN1
+hCount[1] => hCount[1].IN1
+hCount[2] => hCount[2].IN1
+hCount[3] => hCount[3].IN1
+hCount[4] => hCount[4].IN1
+hCount[5] => hCount[5].IN1
+hCount[6] => hCount[6].IN1
+hCount[7] => hCount[7].IN1
+hCount[8] => hCount[8].IN1
+hCount[9] => hCount[9].IN1
+vCount[0] => vCount[0].IN1
+vCount[1] => vCount[1].IN1
+vCount[2] => vCount[2].IN1
+vCount[3] => vCount[3].IN1
+vCount[4] => vCount[4].IN1
+vCount[5] => vCount[5].IN1
+vCount[6] => vCount[6].IN1
+vCount[7] => vCount[7].IN1
+vCount[8] => vCount[8].IN1
+vCount[9] => vCount[9].IN1
+on_v <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|comparador_on_v:comp_on_v|subtrator_10bit:sub_h
+A[0] => Add0.IN10
+A[1] => Add0.IN9
+A[2] => Add0.IN8
+A[3] => Add0.IN7
+A[4] => Add0.IN6
+A[5] => Add0.IN5
+A[6] => Add0.IN4
+A[7] => Add0.IN3
+A[8] => Add0.IN2
+A[9] => Add0.IN1
+B[0] => Add0.IN20
+B[1] => Add0.IN19
+B[2] => Add0.IN18
+B[3] => Add0.IN17
+B[4] => Add0.IN16
+B[5] => Add0.IN15
+B[6] => Add0.IN14
+B[7] => Add0.IN13
+B[8] => Add0.IN12
+B[9] => Add0.IN11
+diff[0] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[4] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[5] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[6] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[7] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[8] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[9] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+borrow <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|comparador_on_v:comp_on_v|subtrator_10bit:sub_v
+A[0] => Add0.IN10
+A[1] => Add0.IN9
+A[2] => Add0.IN8
+A[3] => Add0.IN7
+A[4] => Add0.IN6
+A[5] => Add0.IN5
+A[6] => Add0.IN4
+A[7] => Add0.IN3
+A[8] => Add0.IN2
+A[9] => Add0.IN1
+B[0] => Add0.IN20
+B[1] => Add0.IN19
+B[2] => Add0.IN18
+B[3] => Add0.IN17
+B[4] => Add0.IN16
+B[5] => Add0.IN15
+B[6] => Add0.IN14
+B[7] => Add0.IN13
+B[8] => Add0.IN12
+B[9] => Add0.IN11
+diff[0] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[4] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[5] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[6] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[7] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[8] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+diff[9] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+borrow <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|video_on_logic:video_on_inst
+on_h => comb.IN0
+on_v => comb.IN1
+video_on <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_vga|rgb_control:rgb_inst
+a => a0.IN0
+a => a1.IN0
+a => a2.IN0
+a => b0.IN0
+a => d0.IN0
+a => e1.IN0
+a => e2.IN0
+a => f2.IN0
+a => g2.IN0
+a => h2.IN0
+a => i0.IN0
+a => i3.IN0
+a => j0.IN0
+a => j1.IN0
+a => k1.IN0
+a => k2.IN0
+a => l0.IN0
+a => l1.IN0
+a => a6.IN0
+a => b2.IN0
+a => c1.IN0
+a => e3.IN0
+a => e4.IN0
+a => f3.IN0
+a => g0.IN0
+a => g1.IN0
+a => h1.IN0
+a => i2.IN0
+a => j3.IN0
+a => j4.IN0
+a => k3.IN0
+a => l2.IN0
+a => l3.IN0
+b => a2.IN1
+b => a3.IN0
+b => a4.IN0
+b => b1.IN0
+b => b2.IN1
+b => c0.IN0
+b => c1.IN1
+b => c2.IN0
+b => d0.IN1
+b => d1.IN0
+b => e0.IN0
+b => e4.IN1
+b => f0.IN0
+b => f3.IN1
+b => g0.IN1
+b => h3.IN0
+b => i1.IN0
+b => i3.IN1
+b => j2.IN0
+b => j3.IN1
+b => k0.IN0
+b => k1.IN1
+b => l2.IN1
+b => a6.IN1
+b => b3.IN0
+b => b4.IN0
+b => c3.IN0
+b => c4.IN0
+b => d2.IN0
+b => d3.IN0
+b => f1.IN0
+b => f2.IN1
+b => g3.IN0
+b => h0.IN0
+b => h2.IN1
+b => i0.IN1
+b => j0.IN1
+b => j4.IN1
+c => a0.IN1
+c => a3.IN1
+c => a5.IN0
+c => b0.IN1
+c => b3.IN1
+c => c0.IN1
+c => c1.IN2
+c => c3.IN1
+c => d0.IN2
+c => d2.IN1
+c => e1.IN1
+c => e3.IN1
+c => g2.IN1
+c => h2.IN2
+c => i2.IN1
+c => i3.IN2
+c => j1.IN1
+c => j4.IN2
+c => k3.IN1
+c => l0.IN1
+c => l3.IN1
+c => a6.IN2
+c => b1.IN1
+c => b4.IN1
+c => c2.IN1
+c => c4.IN1
+c => d1.IN1
+c => d3.IN1
+c => e2.IN1
+c => f0.IN1
+c => g3.IN1
+c => h3.IN1
+c => i0.IN2
+c => i1.IN1
+c => j0.IN2
+c => j2.IN1
+c => j3.IN2
+c => k0.IN1
+c => k2.IN1
+c => l1.IN1
+c => l2.IN2
+d => a1.IN1
+d => a4.IN1
+d => a5.IN1
+d => b1.IN2
+d => b2.IN2
+d => b3.IN2
+d => c2.IN2
+d => c3.IN2
+d => d1.IN2
+d => d2.IN2
+d => e2.IN2
+d => e3.IN2
+d => f1.IN1
+d => f2.IN2
+d => g1.IN1
+d => g3.IN2
+d => h0.IN1
+d => h1.IN1
+d => i3.IN3
+d => j1.IN2
+d => k1.IN2
+d => l0.IN2
+d => a6.IN3
+d => b0.IN2
+d => b4.IN2
+d => c0.IN2
+d => c4.IN2
+d => d3.IN2
+d => e0.IN1
+d => e1.IN2
+d => e4.IN2
+d => f3.IN2
+d => g2.IN2
+d => h3.IN2
+d => i1.IN2
+d => i2.IN2
+d => j2.IN2
+d => j4.IN3
+d => k2.IN2
+d => k3.IN2
+d => l1.IN2
+d => l3.IN2
+red0 <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+red1 <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+red2 <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+red3 <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+green0 <= WideOr7.DB_MAX_OUTPUT_PORT_TYPE
+green1 <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+green2 <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+green3 <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+blue0 <= WideOr11.DB_MAX_OUTPUT_PORT_TYPE
+blue1 <= WideOr10.DB_MAX_OUTPUT_PORT_TYPE
+blue2 <= WideOr9.DB_MAX_OUTPUT_PORT_TYPE
+blue3 <= WideOr8.DB_MAX_OUTPUT_PORT_TYPE
+
+
