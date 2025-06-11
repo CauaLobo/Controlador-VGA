@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ControladorVGA
-Sat May 31 00:10:21 2025
+Tue Jun 10 00:53:45 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -51,7 +51,7 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat May 31 00:10:21 2025           ;
+; Analysis & Synthesis Status        ; Successful - Tue Jun 10 00:53:44 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; ControladorVGA                                  ;
 ; Top-level Entity Name              ; main_vga                                        ;
@@ -60,7 +60,7 @@ on the Quartus Prime software download page.
 ;     Total combinational functions  ; 190                                             ;
 ;     Dedicated logic registers      ; 21                                              ;
 ; Total registers                    ; 21                                              ;
-; Total pins                         ; 26                                              ;
+; Total pins                         ; 20                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -173,24 +173,24 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                    ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                      ; Library ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------------+---------+
-; main_vga.v                       ; yes             ; User Verilog HDL File  ; C:/Users/Cleuber/Documents/Controlador VGA/main_vga.v             ;         ;
-; divisor_clock2.v                 ; yes             ; User Verilog HDL File  ; C:/Users/Cleuber/Documents/Controlador VGA/divisor_clock2.v       ;         ;
-; rgb_control.v                    ; yes             ; User Verilog HDL File  ; C:/Users/Cleuber/Documents/Controlador VGA/rgb_control.v          ;         ;
-; contador_JK.v                    ; yes             ; User Verilog HDL File  ; C:/Users/Cleuber/Documents/Controlador VGA/contador_JK.v          ;         ;
-; comparador_igual_799.v           ; yes             ; User Verilog HDL File  ; C:/Users/Cleuber/Documents/Controlador VGA/comparador_igual_799.v ;         ;
-; comparador_igual_524.v           ; yes             ; User Verilog HDL File  ; C:/Users/Cleuber/Documents/Controlador VGA/comparador_igual_524.v ;         ;
-; comparador_menor_2.v             ; yes             ; User Verilog HDL File  ; C:/Users/Cleuber/Documents/Controlador VGA/comparador_menor_2.v   ;         ;
-; comparador_on_h.v                ; yes             ; User Verilog HDL File  ; C:/Users/Cleuber/Documents/Controlador VGA/comparador_on_h.v      ;         ;
-; comparador_on_v.v                ; yes             ; User Verilog HDL File  ; C:/Users/Cleuber/Documents/Controlador VGA/comparador_on_v.v      ;         ;
-; video_on_logic.v                 ; yes             ; User Verilog HDL File  ; C:/Users/Cleuber/Documents/Controlador VGA/video_on_logic.v       ;         ;
-; jk_ff_flipflop.v                 ; yes             ; User Verilog HDL File  ; C:/Users/Cleuber/Documents/Controlador VGA/jk_ff_flipflop.v       ;         ;
-; subtrator_10bit.v                ; yes             ; User Verilog HDL File  ; C:/Users/Cleuber/Documents/Controlador VGA/subtrator_10bit.v      ;         ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                            ;
++----------------------------------+-----------------+------------------------+-------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path              ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------+---------+
+; main_vga.v                       ; yes             ; User Verilog HDL File  ; E:/Controlador VGA/main_vga.v             ;         ;
+; divisor_clock2.v                 ; yes             ; User Verilog HDL File  ; E:/Controlador VGA/divisor_clock2.v       ;         ;
+; rgb_control.v                    ; yes             ; User Verilog HDL File  ; E:/Controlador VGA/rgb_control.v          ;         ;
+; contador_JK.v                    ; yes             ; User Verilog HDL File  ; E:/Controlador VGA/contador_JK.v          ;         ;
+; comparador_igual_799.v           ; yes             ; User Verilog HDL File  ; E:/Controlador VGA/comparador_igual_799.v ;         ;
+; comparador_igual_524.v           ; yes             ; User Verilog HDL File  ; E:/Controlador VGA/comparador_igual_524.v ;         ;
+; comparador_menor_2.v             ; yes             ; User Verilog HDL File  ; E:/Controlador VGA/comparador_menor_2.v   ;         ;
+; comparador_on_h.v                ; yes             ; User Verilog HDL File  ; E:/Controlador VGA/comparador_on_h.v      ;         ;
+; comparador_on_v.v                ; yes             ; User Verilog HDL File  ; E:/Controlador VGA/comparador_on_v.v      ;         ;
+; video_on_logic.v                 ; yes             ; User Verilog HDL File  ; E:/Controlador VGA/video_on_logic.v       ;         ;
+; jk_ff_flipflop.v                 ; yes             ; User Verilog HDL File  ; E:/Controlador VGA/jk_ff_flipflop.v       ;         ;
+; subtrator_10bit.v                ; yes             ; User Verilog HDL File  ; E:/Controlador VGA/subtrator_10bit.v      ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------+---------+
 
 
 +--------------------------------------------------------------------------+
@@ -214,14 +214,14 @@ on the Quartus Prime software download page.
 ;     -- Dedicated logic registers            ; 21                         ;
 ;     -- I/O registers                        ; 0                          ;
 ;                                             ;                            ;
-; I/O pins                                    ; 26                         ;
+; I/O pins                                    ; 20                         ;
 ;                                             ;                            ;
 ; Embedded Multiplier 9-bit elements          ; 0                          ;
 ;                                             ;                            ;
 ; Maximum fan-out node                        ; divisor_clock2:div|clk_out ;
 ; Maximum fan-out                             ; 21                         ;
-; Total fan-out                               ; 543                        ;
-; Average fan-out                             ; 2.06                       ;
+; Total fan-out                               ; 537                        ;
+; Average fan-out                             ; 2.14                       ;
 +---------------------------------------------+----------------------------+
 
 
@@ -230,7 +230,7 @@ on the Quartus Prime software download page.
 +---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                          ; Entity Name          ; Library Name ;
 +---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------+----------------------+--------------+
-; |main_vga                             ; 190 (26)            ; 21 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 26   ; 0            ; 0          ; |main_vga                                                    ; main_vga             ; work         ;
+; |main_vga                             ; 190 (26)            ; 21 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 20   ; 0            ; 0          ; |main_vga                                                    ; main_vga             ; work         ;
 ;    |comparador_igual_524:comp_v|      ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|comparador_igual_524:comp_v                        ; comparador_igual_524 ; work         ;
 ;    |comparador_igual_799:comp_h|      ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|comparador_igual_799:comp_h                        ; comparador_igual_799 ; work         ;
 ;    |comparador_menor_2:comp_vsync|    ; 21 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|comparador_menor_2:comp_vsync                      ; comparador_menor_2   ; work         ;
@@ -387,7 +387,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 26                          ;
+; boundary_port         ; 20                          ;
 ; cycloneiii_ff         ; 21                          ;
 ;     CLR               ; 1                           ;
 ;     plain             ; 20                          ;
@@ -422,69 +422,62 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Sat May 31 00:10:13 2025
+    Info: Processing started: Tue Jun 10 00:53:35 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ControladorVGA -c ControladorVGA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file main_vga.v
-    Info (12023): Found entity 1: main_vga File: C:/Users/Cleuber/Documents/Controlador VGA/main_vga.v Line: 1
+    Info (12023): Found entity 1: main_vga File: E:/Controlador VGA/main_vga.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file divisor_clock2.v
-    Info (12023): Found entity 1: divisor_clock2 File: C:/Users/Cleuber/Documents/Controlador VGA/divisor_clock2.v Line: 1
-Warning (10275): Verilog HDL Module Instantiation warning at rgb_control.v(113): ignored dangling comma in List of Port Connections File: C:/Users/Cleuber/Documents/Controlador VGA/rgb_control.v Line: 113
+    Info (12023): Found entity 1: divisor_clock2 File: E:/Controlador VGA/divisor_clock2.v Line: 1
+Warning (10275): Verilog HDL Module Instantiation warning at rgb_control.v(113): ignored dangling comma in List of Port Connections File: E:/Controlador VGA/rgb_control.v Line: 113
 Info (12021): Found 1 design units, including 1 entities, in source file rgb_control.v
-    Info (12023): Found entity 1: rgb_control File: C:/Users/Cleuber/Documents/Controlador VGA/rgb_control.v Line: 1
+    Info (12023): Found entity 1: rgb_control File: E:/Controlador VGA/rgb_control.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file contador_jk.v
-    Info (12023): Found entity 1: contador_JK File: C:/Users/Cleuber/Documents/Controlador VGA/contador_JK.v Line: 1
+    Info (12023): Found entity 1: contador_JK File: E:/Controlador VGA/contador_JK.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file comparador_igual_799.v
-    Info (12023): Found entity 1: comparador_igual_799 File: C:/Users/Cleuber/Documents/Controlador VGA/comparador_igual_799.v Line: 1
+    Info (12023): Found entity 1: comparador_igual_799 File: E:/Controlador VGA/comparador_igual_799.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file comparador_igual_524.v
-    Info (12023): Found entity 1: comparador_igual_524 File: C:/Users/Cleuber/Documents/Controlador VGA/comparador_igual_524.v Line: 1
+    Info (12023): Found entity 1: comparador_igual_524 File: E:/Controlador VGA/comparador_igual_524.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file comparador_menor_2.v
-    Info (12023): Found entity 1: comparador_menor_2 File: C:/Users/Cleuber/Documents/Controlador VGA/comparador_menor_2.v Line: 1
+    Info (12023): Found entity 1: comparador_menor_2 File: E:/Controlador VGA/comparador_menor_2.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file comparador_on_h.v
-    Info (12023): Found entity 1: comparador_on_h File: C:/Users/Cleuber/Documents/Controlador VGA/comparador_on_h.v Line: 1
+    Info (12023): Found entity 1: comparador_on_h File: E:/Controlador VGA/comparador_on_h.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file comparador_on_v.v
-    Info (12023): Found entity 1: comparador_on_v File: C:/Users/Cleuber/Documents/Controlador VGA/comparador_on_v.v Line: 1
+    Info (12023): Found entity 1: comparador_on_v File: E:/Controlador VGA/comparador_on_v.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file video_on_logic.v
-    Info (12023): Found entity 1: video_on_logic File: C:/Users/Cleuber/Documents/Controlador VGA/video_on_logic.v Line: 1
+    Info (12023): Found entity 1: video_on_logic File: E:/Controlador VGA/video_on_logic.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file jk_ff_flipflop.v
-    Info (12023): Found entity 1: jk_ff_flipflop File: C:/Users/Cleuber/Documents/Controlador VGA/jk_ff_flipflop.v Line: 1
+    Info (12023): Found entity 1: jk_ff_flipflop File: E:/Controlador VGA/jk_ff_flipflop.v Line: 1
 Info (12021): Found 2 design units, including 2 entities, in source file subtrator_10bit.v
-    Info (12023): Found entity 1: subtrator_10bit File: C:/Users/Cleuber/Documents/Controlador VGA/subtrator_10bit.v Line: 1
-    Info (12023): Found entity 2: comparador_menor_96 File: C:/Users/Cleuber/Documents/Controlador VGA/subtrator_10bit.v Line: 28
+    Info (12023): Found entity 1: subtrator_10bit File: E:/Controlador VGA/subtrator_10bit.v Line: 1
+    Info (12023): Found entity 2: comparador_menor_96 File: E:/Controlador VGA/subtrator_10bit.v Line: 28
 Info (12127): Elaborating entity "main_vga" for the top level hierarchy
-Info (12128): Elaborating entity "divisor_clock2" for hierarchy "divisor_clock2:div" File: C:/Users/Cleuber/Documents/Controlador VGA/main_vga.v Line: 27
-Info (12128): Elaborating entity "comparador_igual_799" for hierarchy "comparador_igual_799:comp_h" File: C:/Users/Cleuber/Documents/Controlador VGA/main_vga.v Line: 35
-Info (12128): Elaborating entity "comparador_igual_524" for hierarchy "comparador_igual_524:comp_v" File: C:/Users/Cleuber/Documents/Controlador VGA/main_vga.v Line: 40
-Info (12128): Elaborating entity "contador_JK" for hierarchy "contador_JK:cont_h" File: C:/Users/Cleuber/Documents/Controlador VGA/main_vga.v Line: 51
-Warning (10036): Verilog HDL or VHDL warning at contador_JK.v(6): object "carry" assigned a value but never read File: C:/Users/Cleuber/Documents/Controlador VGA/contador_JK.v Line: 6
-Info (12128): Elaborating entity "jk_ff_flipflop" for hierarchy "contador_JK:cont_h|jk_ff_flipflop:ff0" File: C:/Users/Cleuber/Documents/Controlador VGA/contador_JK.v Line: 13
-Info (12128): Elaborating entity "comparador_menor_96" for hierarchy "comparador_menor_96:comp_hsync" File: C:/Users/Cleuber/Documents/Controlador VGA/main_vga.v Line: 66
-Info (12128): Elaborating entity "subtrator_10bit" for hierarchy "comparador_menor_96:comp_hsync|subtrator_10bit:sub" File: C:/Users/Cleuber/Documents/Controlador VGA/subtrator_10bit.v Line: 40
-Warning (10230): Verilog HDL assignment warning at subtrator_10bit.v(23): truncated value with size 32 to match size of target (11) File: C:/Users/Cleuber/Documents/Controlador VGA/subtrator_10bit.v Line: 23
-Info (12128): Elaborating entity "comparador_menor_2" for hierarchy "comparador_menor_2:comp_vsync" File: C:/Users/Cleuber/Documents/Controlador VGA/main_vga.v Line: 71
-Info (12128): Elaborating entity "comparador_on_h" for hierarchy "comparador_on_h:comp_on_h" File: C:/Users/Cleuber/Documents/Controlador VGA/main_vga.v Line: 80
-Info (12128): Elaborating entity "comparador_on_v" for hierarchy "comparador_on_v:comp_on_v" File: C:/Users/Cleuber/Documents/Controlador VGA/main_vga.v Line: 87
-Info (12128): Elaborating entity "video_on_logic" for hierarchy "video_on_logic:video_on_inst" File: C:/Users/Cleuber/Documents/Controlador VGA/main_vga.v Line: 94
-Info (12128): Elaborating entity "rgb_control" for hierarchy "rgb_control:rgb_inst" File: C:/Users/Cleuber/Documents/Controlador VGA/main_vga.v Line: 106
+Info (12128): Elaborating entity "divisor_clock2" for hierarchy "divisor_clock2:div" File: E:/Controlador VGA/main_vga.v Line: 27
+Info (12128): Elaborating entity "comparador_igual_799" for hierarchy "comparador_igual_799:comp_h" File: E:/Controlador VGA/main_vga.v Line: 35
+Info (12128): Elaborating entity "comparador_igual_524" for hierarchy "comparador_igual_524:comp_v" File: E:/Controlador VGA/main_vga.v Line: 40
+Info (12128): Elaborating entity "contador_JK" for hierarchy "contador_JK:cont_h" File: E:/Controlador VGA/main_vga.v Line: 51
+Warning (10036): Verilog HDL or VHDL warning at contador_JK.v(6): object "carry" assigned a value but never read File: E:/Controlador VGA/contador_JK.v Line: 6
+Info (12128): Elaborating entity "jk_ff_flipflop" for hierarchy "contador_JK:cont_h|jk_ff_flipflop:ff0" File: E:/Controlador VGA/contador_JK.v Line: 13
+Info (12128): Elaborating entity "comparador_menor_96" for hierarchy "comparador_menor_96:comp_hsync" File: E:/Controlador VGA/main_vga.v Line: 66
+Info (12128): Elaborating entity "subtrator_10bit" for hierarchy "comparador_menor_96:comp_hsync|subtrator_10bit:sub" File: E:/Controlador VGA/subtrator_10bit.v Line: 40
+Warning (10230): Verilog HDL assignment warning at subtrator_10bit.v(23): truncated value with size 32 to match size of target (11) File: E:/Controlador VGA/subtrator_10bit.v Line: 23
+Info (12128): Elaborating entity "comparador_menor_2" for hierarchy "comparador_menor_2:comp_vsync" File: E:/Controlador VGA/main_vga.v Line: 71
+Info (12128): Elaborating entity "comparador_on_h" for hierarchy "comparador_on_h:comp_on_h" File: E:/Controlador VGA/main_vga.v Line: 80
+Info (12128): Elaborating entity "comparador_on_v" for hierarchy "comparador_on_v:comp_on_v" File: E:/Controlador VGA/main_vga.v Line: 87
+Info (12128): Elaborating entity "video_on_logic" for hierarchy "video_on_logic:video_on_inst" File: E:/Controlador VGA/main_vga.v Line: 94
+Info (12128): Elaborating entity "rgb_control" for hierarchy "rgb_control:rgb_inst" File: E:/Controlador VGA/main_vga.v Line: 106
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 6 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "sw4" File: C:/Users/Cleuber/Documents/Controlador VGA/main_vga.v Line: 3
-    Warning (15610): No output dependent on input pin "sw5" File: C:/Users/Cleuber/Documents/Controlador VGA/main_vga.v Line: 3
-    Warning (15610): No output dependent on input pin "sw6" File: C:/Users/Cleuber/Documents/Controlador VGA/main_vga.v Line: 3
-    Warning (15610): No output dependent on input pin "sw7" File: C:/Users/Cleuber/Documents/Controlador VGA/main_vga.v Line: 3
-    Warning (15610): No output dependent on input pin "sw8" File: C:/Users/Cleuber/Documents/Controlador VGA/main_vga.v Line: 3
-    Warning (15610): No output dependent on input pin "sw9" File: C:/Users/Cleuber/Documents/Controlador VGA/main_vga.v Line: 3
-Info (21057): Implemented 216 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 12 input pins
+Info (21057): Implemented 210 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
     Info (21059): Implemented 14 output pins
     Info (21061): Implemented 190 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 4843 megabytes
-    Info: Processing ended: Sat May 31 00:10:21 2025
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:20
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4858 megabytes
+    Info: Processing ended: Tue Jun 10 00:53:46 2025
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:19
 
 

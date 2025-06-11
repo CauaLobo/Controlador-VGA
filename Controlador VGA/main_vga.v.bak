@@ -1,0 +1,9 @@
+module main_vga (
+	input clk_50, rst_o,
+	output hsync, vsync,
+	output [3:0] R, G, B
+);
+
+\\ 
+
+endemodule

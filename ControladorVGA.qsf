@@ -69,4 +69,23 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name VERILOG_FILE jk_ff_flipflop.v
 set_global_assignment -name VERILOG_FILE subtrator_10bit.v
+set_location_assignment PIN_P11 -to clk_50
+set_location_assignment PIN_C12 -to sw0
+set_location_assignment PIN_D12 -to sw1
+set_location_assignment PIN_C11 -to sw2
+set_location_assignment PIN_C10 -to sw3
+set_location_assignment PIN_N3 -to hsync
+set_location_assignment PIN_N1 -to vsync
+set_location_assignment PIN_N2 -to B[3]
+set_location_assignment PIN_P4 -to B[2]
+set_location_assignment PIN_T1 -to B[1]
+set_location_assignment PIN_P1 -to B[0]
+set_location_assignment PIN_R1 -to G[3]
+set_location_assignment PIN_R2 -to G[2]
+set_location_assignment PIN_T2 -to G[1]
+set_location_assignment PIN_W1 -to G[0]
+set_location_assignment PIN_Y1 -to R[3]
+set_location_assignment PIN_Y2 -to R[2]
+set_location_assignment PIN_V1 -to R[1]
+set_location_assignment PIN_AA1 -to R[0]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

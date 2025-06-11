@@ -1,0 +1,483 @@
+Analysis & Synthesis report for ControladorVGA
+Mon Jun  9 14:03:01 2025
+Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Port Connectivity Checks: "comparador_on_v:comp_on_v|subtrator_10bit:sub_v"
+ 10. Port Connectivity Checks: "comparador_on_v:comp_on_v|subtrator_10bit:sub_h"
+ 11. Port Connectivity Checks: "comparador_on_h:comp_on_h|subtrator_10bit:sub_v"
+ 12. Port Connectivity Checks: "comparador_on_h:comp_on_h|subtrator_10bit:sub_h"
+ 13. Port Connectivity Checks: "comparador_menor_2:comp_vsync|subtrator_10bit:sub"
+ 14. Port Connectivity Checks: "comparador_menor_96:comp_hsync|subtrator_10bit:sub"
+ 15. Port Connectivity Checks: "contador_JK:cont_h|jk_ff_flipflop:ff0"
+ 16. Port Connectivity Checks: "contador_JK:cont_h"
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Jun  9 14:03:01 2025           ;
+; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
+; Revision Name                      ; ControladorVGA                                  ;
+; Top-level Entity Name              ; main_vga                                        ;
+; Family                             ; MAX 10                                          ;
+; Total logic elements               ; 190                                             ;
+;     Total combinational functions  ; 190                                             ;
+;     Dedicated logic registers      ; 21                                              ;
+; Total registers                    ; 21                                              ;
+; Total pins                         ; 20                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
+; UFM blocks                         ; 0                                               ;
+; ADC blocks                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                            ; main_vga           ; ControladorVGA     ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                             ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------+---------+
+; main_vga.v                       ; yes             ; User Verilog HDL File  ; C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/main_vga.v             ;         ;
+; divisor_clock2.v                 ; yes             ; User Verilog HDL File  ; C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/divisor_clock2.v       ;         ;
+; rgb_control.v                    ; yes             ; User Verilog HDL File  ; C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/rgb_control.v          ;         ;
+; contador_JK.v                    ; yes             ; User Verilog HDL File  ; C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/contador_JK.v          ;         ;
+; comparador_igual_799.v           ; yes             ; User Verilog HDL File  ; C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/comparador_igual_799.v ;         ;
+; comparador_igual_524.v           ; yes             ; User Verilog HDL File  ; C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/comparador_igual_524.v ;         ;
+; comparador_menor_2.v             ; yes             ; User Verilog HDL File  ; C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/comparador_menor_2.v   ;         ;
+; comparador_on_h.v                ; yes             ; User Verilog HDL File  ; C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/comparador_on_h.v      ;         ;
+; comparador_on_v.v                ; yes             ; User Verilog HDL File  ; C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/comparador_on_v.v      ;         ;
+; video_on_logic.v                 ; yes             ; User Verilog HDL File  ; C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/video_on_logic.v       ;         ;
+; jk_ff_flipflop.v                 ; yes             ; User Verilog HDL File  ; C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/jk_ff_flipflop.v       ;         ;
+; subtrator_10bit.v                ; yes             ; User Verilog HDL File  ; C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/subtrator_10bit.v      ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                              ;
++---------------------------------------------+----------------------------+
+; Resource                                    ; Usage                      ;
++---------------------------------------------+----------------------------+
+; Estimated Total logic elements              ; 190                        ;
+;                                             ;                            ;
+; Total combinational functions               ; 190                        ;
+; Logic element usage by number of LUT inputs ;                            ;
+;     -- 4 input functions                    ; 42                         ;
+;     -- 3 input functions                    ; 15                         ;
+;     -- <=2 input functions                  ; 133                        ;
+;                                             ;                            ;
+; Logic elements by mode                      ;                            ;
+;     -- normal mode                          ; 78                         ;
+;     -- arithmetic mode                      ; 112                        ;
+;                                             ;                            ;
+; Total registers                             ; 21                         ;
+;     -- Dedicated logic registers            ; 21                         ;
+;     -- I/O registers                        ; 0                          ;
+;                                             ;                            ;
+; I/O pins                                    ; 20                         ;
+;                                             ;                            ;
+; Embedded Multiplier 9-bit elements          ; 0                          ;
+;                                             ;                            ;
+; Maximum fan-out node                        ; divisor_clock2:div|clk_out ;
+; Maximum fan-out                             ; 21                         ;
+; Total fan-out                               ; 537                        ;
+; Average fan-out                             ; 2.14                       ;
++---------------------------------------------+----------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                             ;
++---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                          ; Entity Name          ; Library Name ;
++---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------+----------------------+--------------+
+; |main_vga                             ; 190 (26)            ; 21 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 20   ; 0            ; 0          ; |main_vga                                                    ; main_vga             ; work         ;
+;    |comparador_igual_524:comp_v|      ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|comparador_igual_524:comp_v                        ; comparador_igual_524 ; work         ;
+;    |comparador_igual_799:comp_h|      ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|comparador_igual_799:comp_h                        ; comparador_igual_799 ; work         ;
+;    |comparador_menor_2:comp_vsync|    ; 21 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|comparador_menor_2:comp_vsync                      ; comparador_menor_2   ; work         ;
+;       |subtrator_10bit:sub|           ; 21 (21)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|comparador_menor_2:comp_vsync|subtrator_10bit:sub  ; subtrator_10bit      ; work         ;
+;    |comparador_menor_96:comp_hsync|   ; 21 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|comparador_menor_96:comp_hsync                     ; comparador_menor_96  ; work         ;
+;       |subtrator_10bit:sub|           ; 21 (21)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|comparador_menor_96:comp_hsync|subtrator_10bit:sub ; subtrator_10bit      ; work         ;
+;    |comparador_on_h:comp_on_h|        ; 42 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|comparador_on_h:comp_on_h                          ; comparador_on_h      ; work         ;
+;       |subtrator_10bit:sub_h|         ; 21 (21)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|comparador_on_h:comp_on_h|subtrator_10bit:sub_h    ; subtrator_10bit      ; work         ;
+;       |subtrator_10bit:sub_v|         ; 21 (21)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|comparador_on_h:comp_on_h|subtrator_10bit:sub_v    ; subtrator_10bit      ; work         ;
+;    |comparador_on_v:comp_on_v|        ; 40 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|comparador_on_v:comp_on_v                          ; comparador_on_v      ; work         ;
+;       |subtrator_10bit:sub_h|         ; 19 (19)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|comparador_on_v:comp_on_v|subtrator_10bit:sub_h    ; subtrator_10bit      ; work         ;
+;       |subtrator_10bit:sub_v|         ; 21 (21)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|comparador_on_v:comp_on_v|subtrator_10bit:sub_v    ; subtrator_10bit      ; work         ;
+;    |contador_JK:cont_h|               ; 15 (5)              ; 10 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|contador_JK:cont_h                                 ; contador_JK          ; work         ;
+;       |jk_ff_flipflop:contador[1].ff| ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|contador_JK:cont_h|jk_ff_flipflop:contador[1].ff   ; jk_ff_flipflop       ; work         ;
+;       |jk_ff_flipflop:contador[2].ff| ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|contador_JK:cont_h|jk_ff_flipflop:contador[2].ff   ; jk_ff_flipflop       ; work         ;
+;       |jk_ff_flipflop:contador[3].ff| ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|contador_JK:cont_h|jk_ff_flipflop:contador[3].ff   ; jk_ff_flipflop       ; work         ;
+;       |jk_ff_flipflop:contador[4].ff| ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|contador_JK:cont_h|jk_ff_flipflop:contador[4].ff   ; jk_ff_flipflop       ; work         ;
+;       |jk_ff_flipflop:contador[5].ff| ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|contador_JK:cont_h|jk_ff_flipflop:contador[5].ff   ; jk_ff_flipflop       ; work         ;
+;       |jk_ff_flipflop:contador[6].ff| ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|contador_JK:cont_h|jk_ff_flipflop:contador[6].ff   ; jk_ff_flipflop       ; work         ;
+;       |jk_ff_flipflop:contador[7].ff| ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|contador_JK:cont_h|jk_ff_flipflop:contador[7].ff   ; jk_ff_flipflop       ; work         ;
+;       |jk_ff_flipflop:contador[8].ff| ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|contador_JK:cont_h|jk_ff_flipflop:contador[8].ff   ; jk_ff_flipflop       ; work         ;
+;       |jk_ff_flipflop:contador[9].ff| ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|contador_JK:cont_h|jk_ff_flipflop:contador[9].ff   ; jk_ff_flipflop       ; work         ;
+;       |jk_ff_flipflop:ff0|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|contador_JK:cont_h|jk_ff_flipflop:ff0              ; jk_ff_flipflop       ; work         ;
+;    |contador_JK:cont_v|               ; 18 (2)              ; 10 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|contador_JK:cont_v                                 ; contador_JK          ; work         ;
+;       |jk_ff_flipflop:contador[1].ff| ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|contador_JK:cont_v|jk_ff_flipflop:contador[1].ff   ; jk_ff_flipflop       ; work         ;
+;       |jk_ff_flipflop:contador[2].ff| ; 2 (2)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|contador_JK:cont_v|jk_ff_flipflop:contador[2].ff   ; jk_ff_flipflop       ; work         ;
+;       |jk_ff_flipflop:contador[3].ff| ; 2 (2)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|contador_JK:cont_v|jk_ff_flipflop:contador[3].ff   ; jk_ff_flipflop       ; work         ;
+;       |jk_ff_flipflop:contador[4].ff| ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|contador_JK:cont_v|jk_ff_flipflop:contador[4].ff   ; jk_ff_flipflop       ; work         ;
+;       |jk_ff_flipflop:contador[5].ff| ; 2 (2)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|contador_JK:cont_v|jk_ff_flipflop:contador[5].ff   ; jk_ff_flipflop       ; work         ;
+;       |jk_ff_flipflop:contador[6].ff| ; 2 (2)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|contador_JK:cont_v|jk_ff_flipflop:contador[6].ff   ; jk_ff_flipflop       ; work         ;
+;       |jk_ff_flipflop:contador[7].ff| ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|contador_JK:cont_v|jk_ff_flipflop:contador[7].ff   ; jk_ff_flipflop       ; work         ;
+;       |jk_ff_flipflop:contador[8].ff| ; 2 (2)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|contador_JK:cont_v|jk_ff_flipflop:contador[8].ff   ; jk_ff_flipflop       ; work         ;
+;       |jk_ff_flipflop:contador[9].ff| ; 2 (2)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|contador_JK:cont_v|jk_ff_flipflop:contador[9].ff   ; jk_ff_flipflop       ; work         ;
+;       |jk_ff_flipflop:ff0|            ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|contador_JK:cont_v|jk_ff_flipflop:ff0              ; jk_ff_flipflop       ; work         ;
+;    |divisor_clock2:div|               ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|divisor_clock2:div                                 ; divisor_clock2       ; work         ;
+;    |video_on_logic:video_on_inst|     ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main_vga|video_on_logic:video_on_inst                       ; video_on_logic       ; work         ;
++---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------+----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 21    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 1     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "comparador_on_v:comp_on_v|subtrator_10bit:sub_v"                                       ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; B[8..2] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; B[9]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; B[1]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; B[0]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; diff    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "comparador_on_v:comp_on_v|subtrator_10bit:sub_h"                                       ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; B[1..0] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; B[9..6] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; B[4..2] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; B[5]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; diff    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "comparador_on_h:comp_on_h|subtrator_10bit:sub_v"                                       ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; B[9..8] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; B[7..5] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; B[3..0] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; B[4]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; diff    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "comparador_on_h:comp_on_h|subtrator_10bit:sub_h"                                       ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; B[9..8] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; B[6..5] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; B[3..0] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; B[7]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; B[4]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; diff    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "comparador_menor_2:comp_vsync|subtrator_10bit:sub"                                     ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; B[9..2] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; B[1]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; B[0]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; diff    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "comparador_menor_96:comp_hsync|subtrator_10bit:sub"                                    ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; B[6..5] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; B[9..7] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; B[4..0] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; diff    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "contador_JK:cont_h|jk_ff_flipflop:ff0" ;
++------+-------+----------+-----------------------------------------+
+; Port ; Type  ; Severity ; Details                                 ;
++------+-------+----------+-----------------------------------------+
+; J    ; Input ; Info     ; Stuck at VCC                            ;
+; K    ; Input ; Info     ; Stuck at VCC                            ;
++------+-------+----------+-----------------------------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "contador_JK:cont_h" ;
++--------+-------+----------+--------------------+
+; Port   ; Type  ; Severity ; Details            ;
++--------+-------+----------+--------------------+
+; enable ; Input ; Info     ; Stuck at VCC       ;
++--------+-------+----------+--------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 20                          ;
+; cycloneiii_ff         ; 21                          ;
+;     CLR               ; 1                           ;
+;     plain             ; 20                          ;
+; cycloneiii_lcell_comb ; 192                         ;
+;     arith             ; 112                         ;
+;         2 data inputs ; 106                         ;
+;         3 data inputs ; 6                           ;
+;     normal            ; 80                          ;
+;         0 data inputs ; 6                           ;
+;         1 data inputs ; 9                           ;
+;         2 data inputs ; 14                          ;
+;         3 data inputs ; 9                           ;
+;         4 data inputs ; 42                          ;
+;                       ;                             ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 4.27                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+    Info: Processing started: Mon Jun  9 14:02:47 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ControladorVGA -c ControladorVGA
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file main_vga.v
+    Info (12023): Found entity 1: main_vga File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/main_vga.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file divisor_clock2.v
+    Info (12023): Found entity 1: divisor_clock2 File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/divisor_clock2.v Line: 1
+Warning (10275): Verilog HDL Module Instantiation warning at rgb_control.v(113): ignored dangling comma in List of Port Connections File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/rgb_control.v Line: 113
+Info (12021): Found 1 design units, including 1 entities, in source file rgb_control.v
+    Info (12023): Found entity 1: rgb_control File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/rgb_control.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file contador_jk.v
+    Info (12023): Found entity 1: contador_JK File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/contador_JK.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file comparador_igual_799.v
+    Info (12023): Found entity 1: comparador_igual_799 File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/comparador_igual_799.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file comparador_igual_524.v
+    Info (12023): Found entity 1: comparador_igual_524 File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/comparador_igual_524.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file comparador_menor_2.v
+    Info (12023): Found entity 1: comparador_menor_2 File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/comparador_menor_2.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file comparador_on_h.v
+    Info (12023): Found entity 1: comparador_on_h File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/comparador_on_h.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file comparador_on_v.v
+    Info (12023): Found entity 1: comparador_on_v File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/comparador_on_v.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file video_on_logic.v
+    Info (12023): Found entity 1: video_on_logic File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/video_on_logic.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file jk_ff_flipflop.v
+    Info (12023): Found entity 1: jk_ff_flipflop File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/jk_ff_flipflop.v Line: 1
+Info (12021): Found 2 design units, including 2 entities, in source file subtrator_10bit.v
+    Info (12023): Found entity 1: subtrator_10bit File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/subtrator_10bit.v Line: 1
+    Info (12023): Found entity 2: comparador_menor_96 File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/subtrator_10bit.v Line: 28
+Info (12127): Elaborating entity "main_vga" for the top level hierarchy
+Info (12128): Elaborating entity "divisor_clock2" for hierarchy "divisor_clock2:div" File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/main_vga.v Line: 27
+Info (12128): Elaborating entity "comparador_igual_799" for hierarchy "comparador_igual_799:comp_h" File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/main_vga.v Line: 35
+Info (12128): Elaborating entity "comparador_igual_524" for hierarchy "comparador_igual_524:comp_v" File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/main_vga.v Line: 40
+Info (12128): Elaborating entity "contador_JK" for hierarchy "contador_JK:cont_h" File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/main_vga.v Line: 51
+Warning (10036): Verilog HDL or VHDL warning at contador_JK.v(6): object "carry" assigned a value but never read File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/contador_JK.v Line: 6
+Info (12128): Elaborating entity "jk_ff_flipflop" for hierarchy "contador_JK:cont_h|jk_ff_flipflop:ff0" File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/contador_JK.v Line: 13
+Info (12128): Elaborating entity "comparador_menor_96" for hierarchy "comparador_menor_96:comp_hsync" File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/main_vga.v Line: 66
+Info (12128): Elaborating entity "subtrator_10bit" for hierarchy "comparador_menor_96:comp_hsync|subtrator_10bit:sub" File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/subtrator_10bit.v Line: 40
+Warning (10230): Verilog HDL assignment warning at subtrator_10bit.v(23): truncated value with size 32 to match size of target (11) File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/subtrator_10bit.v Line: 23
+Info (12128): Elaborating entity "comparador_menor_2" for hierarchy "comparador_menor_2:comp_vsync" File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/main_vga.v Line: 71
+Info (12128): Elaborating entity "comparador_on_h" for hierarchy "comparador_on_h:comp_on_h" File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/main_vga.v Line: 80
+Info (12128): Elaborating entity "comparador_on_v" for hierarchy "comparador_on_v:comp_on_v" File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/main_vga.v Line: 87
+Info (12128): Elaborating entity "video_on_logic" for hierarchy "video_on_logic:video_on_inst" File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/main_vga.v Line: 94
+Info (12128): Elaborating entity "rgb_control" for hierarchy "rgb_control:rgb_inst" File: C:/Users/Cleuber/Documents/iLovePDF/Controlador VGA/main_vga.v Line: 106
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 210 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 14 output pins
+    Info (21061): Implemented 190 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4843 megabytes
+    Info: Processing ended: Mon Jun  9 14:03:01 2025
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:35
+
+
